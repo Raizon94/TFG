@@ -1,0 +1,29 @@
+FROM python:3.13-slim
+
+WORKDIR /app
+
+ARG HTTP_PROXY
+ARG HTTPS_PROXY
+ENV HTTP_PROXY=$HTTP_PROXY
+ENV HTTPS_PROXY=$HTTPS_PROXY
+
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libmariadb-dev \
+    pkg-config \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+ENV PYTHONPATH="${PYTHONPATH}:/app/backend"
+ENV DATABASE_URL="mysql+pymysql://root:root1234@db:3306/tfg_bd"
+
+COPY backend ./backend
+COPY scripts ./scripts
+
+# Creamos carpetas para persistencia y montajes
+RUN mkdir -p /app/backend/app/models /app/rag_data /app/product_images
+
+CMD ["uvicorn", "app.main:app", "--app-dir", "backend", "--host", "0.0.0.0", "--port", "8000"]

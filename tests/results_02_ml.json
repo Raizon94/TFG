@@ -1,0 +1,91 @@
+{
+  "total": 14,
+  "passed": 14,
+  "failed": 0,
+  "details": [
+    {
+      "name": "Archivos .joblib existen",
+      "passed": true,
+      "detail": "sizes={'svd_what.joblib': '2352.4KB', 'fallback_popular.joblib': '0.0KB', 'training_metadata.joblib': '0.2KB'}",
+      "latency_ms": 0
+    },
+    {
+      "name": "Estructura artefacto SVD",
+      "passed": true,
+      "detail": "keys=OK, 2622 usuarios, 1794 productos, 50 componentes",
+      "latency_ms": 1098.23
+    },
+    {
+      "name": "Varianza explicada SVD",
+      "passed": "True",
+      "detail": "varianza_explicada=0.5742 (57.4%)",
+      "latency_ms": 0
+    },
+    {
+      "name": "Fallback productos populares",
+      "passed": true,
+      "detail": "count=10, top5=[1530, 1536, 1533, 1552, 1527]",
+      "latency_ms": 0.26
+    },
+    {
+      "name": "Training metadata",
+      "passed": true,
+      "detail": "fecha=2026-02-23T18:56:35.619909, pedidos=5740",
+      "latency_ms": 0
+    },
+    {
+      "name": "Forma de svd.components_",
+      "passed": true,
+      "detail": "shape=(50, 1794), esperado=(50, 1794)",
+      "latency_ms": 0
+    },
+    {
+      "name": "Mapeo idx_to_prod consistente",
+      "passed": true,
+      "detail": "len=1794, all_int=True",
+      "latency_ms": 0
+    },
+    {
+      "name": "Fold-in usuario 8872 (conocido)",
+      "passed": true,
+      "detail": "recs=[np.int64(733), np.int64(1486), np.int64(1030), np.int64(138), np.int64(723)]..., sin_overlap=OK, latencia_inferencia=0.92ms",
+      "latency_ms": 0.92
+    },
+    {
+      "name": "Fold-in usuario nuevo (vector vacío)",
+      "passed": "True",
+      "detail": "Vector all-zeros → sin recomendaciones (se usará fallback)",
+      "latency_ms": 0
+    },
+    {
+      "name": "Fold-in con 1 solo producto",
+      "passed": true,
+      "detail": "recs=[np.int64(1555), np.int64(1016), np.int64(933), np.int64(1541), np.int64(567)]..., input=product_id=11",
+      "latency_ms": 0.33
+    },
+    {
+      "name": "Ventana deslizante MAX_WINDOW=8",
+      "passed": true,
+      "detail": "activos=8, mask=8, esperado=8",
+      "latency_ms": 0
+    },
+    {
+      "name": "Cobertura del catálogo (100 queries random)",
+      "passed": true,
+      "detail": "cobertura=19.0% (340/1794 productos)",
+      "latency_ms": 0
+    },
+    {
+      "name": "Diversidad de recomendaciones (50 queries)",
+      "passed": true,
+      "detail": "diversidad=1.00 (50/50 listas únicas)",
+      "latency_ms": 0
+    },
+    {
+      "name": "Lógica check_retrain",
+      "passed": true,
+      "detail": "pedidos_actuales=6040, al_entrenar=5740, nuevos=300, umbral=50, retrain=True",
+      "latency_ms": 0
+    }
+  ]
+}

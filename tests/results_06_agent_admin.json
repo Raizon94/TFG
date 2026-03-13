@@ -1,0 +1,62 @@
+{
+  "total": 8,
+  "avg_latency_ms": 5559.89,
+  "conversations": [
+    {
+      "description": "Informe de ventas del período",
+      "tool_target": "get_sales_report",
+      "question": "Dame un informe de ventas de este mes",
+      "answer": "**📊 Informe de ventas – Mes actual**\n\n| Métrica | Valor |\n|---|---|\n| **Pedidos** | **30** |\n| **Ingresos totales** | **1 947,82 €** |\n| **Ticket medio** | **64,93 €** |\n\n**Distribución por estado**\n\n- Pago aceptado: 18 pedidos  \n- Entregado: 11 pedidos  \n- Enviado: 1 pedido  \n\n¿Necesitas más detalle (por ejemplo, top productos, pedidos pendientes o desglose por día)? 🚀",
+      "latency_ms": 3298.06
+    },
+    {
+      "description": "Ranking de productos más vendidos",
+      "tool_target": "get_top_products",
+      "question": "¿Cuáles son los 5 productos más vendidos?",
+      "answer": "**🏆 Top 5 productos más vendidos (último mes)**  \n\n| Posición | Producto | Unidades vendidas | Ingresos (€) |\n|----------|----------|-------------------|--------------|\n| 1 | **citrino o amatista masivo por gramo – Modelo 1** | 190 | 6,90 |\n| 2 | **Japa mala de turmalina negra y piedras de los chakras, 8 mm** | 26 | 1 258,40 |\n| 3 | **Base de selenita para esfera – Medida 5.5 cm** | 6 | 12,49 |\n| 4 | **Péndulo de calcita miel, 6 facetas** | 6 | 17,28 |\n| 5 | **Colgante de turmalina negra en bruto sin metal – 1 unidad** | 6 | 23,96 |\n\n¿Necesitas más información (por ejemplo, detalle de ingresos por categoría o historial de ventas)? 🚀",
+      "latency_ms": 4050.39
+    },
+    {
+      "description": "Búsqueda de clientes por nombre",
+      "tool_target": "search_customers",
+      "question": "Busca clientes que se llamen María",
+      "answer": "**👥 Clientes encontrados con “María” (10 resultados)**  \n\n| # | Nombre | Email | Pedidos | Total (€) |\n|---|--------|-------|--------|-----------|\n| 1 | Joel **Pujol** (jose-**maria**81@example.com) | 11 | 2 607,99 |\n| 2 | Heraclio **Carlos** ( **maria**-belenmayoral@example.org) | 10 | 617,09 |\n| 3 | **Mariana** Ramirez (imartin@example.com) | 8 | 1 235,14 |\n| 4 | **Mayte** Agudo ( **maria**-teresachico@example.org) | 8 | 1 489,24 |\n| 5 | Alba Pinilla (jose-**maria**63@example.org) | 6 | 1 874,99 |\n| 6 | Otilia Marin ( **maria**-del-carmenabril@example.net) | 5 | 1 666,57 |\n| 7 | Teresita Palau ( **maria**-doloresatienza@example.net) | 5 | 417,38 |\n| 8 | **María Dolores** Carbó (alcaldegalo@example.net) | 5 | 1 418,23 |\n| 9 | Manu Quintero ( **maria**-dolores20@example.org) | 4 | 614,96 |\n|10| **María Cerdá** (yusteamaya@example.org) | 4 | 907,18 |\n\n⚠️ La búsqueda se realizó por coincidencia parcial en nombre y/o email. Si necesitas más detalles de algún cliente (dirección, teléfono, historial de pedidos, etc.) o filtrar por otro criterio, indícame el número de registro o el nombre exacto y lo consultamos.",
+      "latency_ms": 7044.01
+    },
+    {
+      "description": "Estadísticas del catálogo",
+      "tool_target": "get_catalog_stats",
+      "question": "Dame las estadísticas generales del catálogo de productos",
+      "answer": "**📊 Estadísticas generales del catálogo**\n\n| Métrica | Valor |\n|---|---|\n| **Total de productos** | **1 893** |\n| **Productos activos** | **1 835** |\n| **Productos inactivos** | **58** |\n| **Precio medio** | **23,17 €** |\n| **Rango de precios** | **0,00 € – 2 400,00 €** |\n\n**🏆 Principales categorías (solo productos activos)**  \n\n1. **Abalorios** – 405 productos  \n2. **Colgantes** – 184 productos  \n3. **Pulseras Artesanales** – 120 productos  \n4. **Colgantes de plata** – 111 productos  \n5. **Figuras y Ángeles** – 99 productos  \n6. **Minerales en Bruto** – 92 productos  \n7. **Péndulos** – 92 productos  \n8. **Anillos de plata** – 91 productos  \n\n¿Necesitas algún detalle adicional (por ejemplo, stock por categoría, precios extremos por categoría, etc.)? 🚀",
+      "latency_ms": 4150.23
+    },
+    {
+      "description": "Pedidos pendientes de envío",
+      "tool_target": "get_pending_orders",
+      "question": "¿Hay pedidos pendientes de enviar?",
+      "answer": "**📦 Pedidos pendientes de envío (estado “Pago aceptado”)**\n\n| # Pedido | Ref. | Cliente | Importe | Fecha / Hora | Productos | Unidades |\n|----------|------|---------|---------|--------------|-----------|----------|\n| 7255 | JNUKRN80W | Eutropio Olivé | **54,39 €** | 13/03/2026 07:57 | 1 | 1 |\n| 7256 | BTW86WAHH | Eutropio Olivé | **102,79 €** | 13/03/2026 10:49 | 1 | 2 |\n| 7257 | W1AYPFCDI | Eutropio Olivé | **54,39 €** | 13/03/2026 10:49 | 1 | 1 |\n| 7258 | L04ZSM0CW | Eutropio Olivé | **102,79 €** | 13/03/2026 11:06 | 1 | 2 |\n| 7259 | D3MSKJ1H3 | Eutropio Olivé | **102,79 €** | 13/03/2026 11:07 | 1 | 2 |\n| 7260 | 7I4S5SZJV | Eutropio Olivé | **54,39 €** | 13/03/2026 11:10 | 1 | 1 |\n| 7261 | DA5GGUYX7 | Eutropio Olivé | **102,79 €** | 13/03/2026 11:10 | 1 | 2 |\n| 7262 | GT4JR0SIJ | Eutropio Olivé | **54,39 €** | 13/03/2026 11:14 | 1 | 1 |\n| 7263 | 2DOJLBHSK | Eutropio Olivé | **102,79 €** | 13/03/2026 11:14 | 1 | 2 |\n| 7264 | 02AM4DZ19 | Eutropio Olivé | **54,39 €** | 13/03/2026 11:54 | 1 | 1 |\n| 7265 | ERQPL62L7 | Eutropio Olivé | **54,39 €** | 13/03/2026 11:57 | 1 | 1 |\n| 7266 | YWORTUVKR | Eutropio Olivé | **54,39 €** | 13/03/2026 13:01 | 1 | 1 |\n| 7267 | B0J075UE8 | Eutropio Olivé | **54,39 €** | 13/03/2026 13:09 | 1 | 1 |\n| 7268 | 9J9E2JJQ0 | Eutropio Olivé | **102,79 €** | 13/03/2026 13:09 | 1 | 2 |\n| 7269 | RV9G1U9B5 | Eutropio Olivé | **54,39 €** | 13/03/2026 13:21 | 1 | 1 |\n\n> **Total:** 15 pedidos pendientes, 1 236,44 € en importe pendiente.\n\n---\n\n🔎 **¿Necesitas la lista de empaquetado de alguno de estos pedidos?**  \nIndica el **ID del pedido** (por ejemplo, `7264`) y generaré el detalle completo con productos y dirección de envío.",
+      "latency_ms": 8362.56
+    },
+    {
+      "description": "Lista de estados de pedido",
+      "tool_target": "list_order_statuses",
+      "question": "¿Qué estados de pedido existen en el sistema?",
+      "answer": "**📋 Estados de pedido disponibles en UniArt Minerales**\n\n| # | Nombre del estado |\n|---|-------------------|\n| 1 | En espera de pago por cheque |\n| 2 | Pago aceptado |\n| 3 | Preparación en curso |\n| 4 | Enviado |\n| 5 | Entregado |\n| 6 | Cancelado |\n| 7 | Reembolsado |\n| 8 | Error en pago |\n| 9 | Pedido pendiente por falta de stock (pagado) |\n|10| En espera de pago por transferencia bancaria |\n|11| Pago remoto aceptado |\n|12| Pedido pendiente por falta de stock (no pagado) |\n|13| En espera de validación por contra reembolso |\n|14| Waiting for PayPal payment |\n|15| Waiting for Credit Card Payment |\n|16| Waiting for Local Payment Method Payment |\n|17| Authorized. To be captured by merchant |\n|18| Reembolso parcial |\n|19| Waiting capture |\n|20| Awaiting for PayPal payment |\n|21| Listo para enviar |\n|22| presupuesto |\n|23| Aviso de pago no recibido |\n|24| pago en tienda |\n|25| Pedido confirmado por teléfono |\n|26| Enviado por Faire |\n|27| Pagado por Faire |\n|28| enviado por Miravia |\n|29| Solicitud de envío cancelada |\n\nSi necesitas información adicional sobre alguno de estos estados (por ejemplo, cuántos pedidos están en cada uno) o deseas cambiar el estado de algún pedido, avísame y lo gestionamos. 🚀",
+      "latency_ms": 4563.27
+    },
+    {
+      "description": "Búsqueda de pedidos recientes",
+      "tool_target": "search_orders",
+      "question": "Busca los últimos pedidos realizados",
+      "answer": "**🔎 Últimos 10 pedidos registrados**  \n\n| # Pedido | Ref. | Cliente | Estado | Total | Fecha |\n|----------|------|---------|--------|-------|-------|\n| **7272** | JWUQBOTXR | Eutropio Olivé (rdiego@example.net) | Pago aceptado | **102,79 €** | 13/03/2026 |\n| **7271** | 1DLKRIRU9 | Eutropio Olivé (rdiego@example.net) | Pago aceptado | **54,39 €** | 13/03/2026 |\n| **7270** | O2OCEFXV0 | Eutropio Olivé (rdiego@example.net) | Pago aceptado | **102,79 €** | 13/03/2026 |\n| **7269** | RV9G1U9B5 | Eutropio Olivé (rdiego@example.net) | Pago aceptado | **54,39 €** | 13/03/2026 |\n| **7268** | 9J9E2JJQ0 | Eutropio Olivé (rdiego@example.net) | Pago aceptado | **102,79 €** | 13/03/2026 |\n| **7267** | B0J075UE8 | Eutropio Olivé (rdiego@example.net) | Pago aceptado | **54,39 €** | 13/03/2026 |\n| **7266** | YWORTUVKR | Eutropio Olivé (rdiego@example.net) | Pago aceptado | **54,39 €** | 13/03/2026 |\n| **7265** | ERQPL62L7 | Eutropio Olivé (rdiego@example.net) | Pago aceptado | **54,39 €** | 13/03/2026 |\n| **7264** | 02AM4DZ19 | Eutropio Olivé (rdiego@example.net) | Pago aceptado | **54,39 €** | 13/03/2026 |\n| **7263** | 2DOJLBHSK | Eutropio Olivé (rdiego@example.net) | Pago aceptado | **102,79 €** | 13/03/2026 |\n\n---\n\n💡 **¿Qué deseas hacer a continuación?**  \n- Ver el **detalle completo** de alguno de estos pedidos (`get_order_details`).  \n- Obtener la **lista de empaquetado** de un pedido pendiente (`get_packing_list`).  \n- Cambiar el **estado** de un pedido (`update_order_status`).  \n- Consultar **más pedidos** (ampliar el límite o filtrar por cliente/estado).  \n\nIndícame la acción que prefieras y, si corresponde, el **ID del pedido**.",
+      "latency_ms": 8950.1
+    },
+    {
+      "description": "Detalles de un pedido específico",
+      "tool_target": "get_order_details",
+      "question": "Dame los detalles completos del pedido número 8",
+      "answer": "**📦 Detalle completo del pedido #8**\n\n| Campo | Información |\n|-------|--------------|\n| **Referencia** | PHFZRVFFT |\n| **Cliente** | **Evelia Sierra** – joel36@example.com |\n| **Estado actual** | **Entregado** |\n| **Fecha de creación** | 29/04/2020 07:59 |\n| **Método de pago** | Redsys |\n| **Total** | **10,35 €** |\n| **Dirección de envío** | Samuel Robledo, Ronda de Jorge Carvajal 65 Puerta 9, 15468 Madrid, España |\n\n### 📦 Productos del pedido\n| Cantidad | Producto | Medida | Precio unitario |\n|----------|----------|--------|-----------------|\n| 1 | Dónut de jade verde | 4.0 cm × 1 | 4,60 € |\n\n### 📅 Historial de estados\n- **29/04/2020 07:59** – Pago aceptado  \n- **30/04/2020 11:11** – Preparación en curso  \n- **30/04/2020 12:47** – Enviado  \n- **06/05/2020 16:57** – Entregado  \n\n---\n\n¿Necesitas alguna información adicional (por ejemplo, lista de empaquetado, modificar el estado, etc.)? 🚀",
+      "latency_ms": 4060.46
+    }
+  ]
+}

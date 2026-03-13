@@ -1,0 +1,81 @@
+{
+  "total": 8,
+  "passed": 8,
+  "infra_errors": 0,
+  "avg_latency_ms": 24427.51,
+  "details": [
+    {
+      "name": "conceptual: 'que tienes para el amor'",
+      "passed": true,
+      "detail": "keywords encontradas: ['cuarzo rosa', 'amor', 'corazón']/['cuarzo rosa', 'amor', 'corazón'] | tools: 🪨 Analizando textos de la tienda: \"amor\", 📦 Buscando productos en el catálogo: \"\", 🔍 Buscando en la base de conocimiento: \"amor\"",
+      "latency_ms": 46676.19,
+      "infra_error": false
+    },
+    {
+      "name": "conceptual: 'necesito protección energética'",
+      "passed": true,
+      "detail": "keywords encontradas: ['turmalina', 'protección', 'negra']/['turmalina', 'protección', 'negra', 'obsidiana'] | tools: 🪨 Analizando textos de la tienda: \"protección energética\", 🔍 Buscando en la base de conocimiento: \"protección energética\", 📦 Buscando productos en el catálogo: \"\"",
+      "latency_ms": 49683.85,
+      "infra_error": false
+    },
+    {
+      "name": "conceptual: 'limpieza energética del hogar'",
+      "passed": true,
+      "detail": "keywords encontradas: ['selenita', 'amatista', 'energía', 'limpieza', 'turmalina']/['selenita', 'amatista', 'energía', 'limpieza', 'turmalina'] | tools: 🪨 Analizando textos de la tienda: \"limpieza energética del hogar\", 🔍 Buscando en la base de conocimiento: \"limpieza energética del hogar\", 📦 Buscando productos en el catálogo: \"\"",
+      "latency_ms": 38229.52,
+      "infra_error": false
+    },
+    {
+      "name": "conceptual: 'minerales para meditar'",
+      "passed": true,
+      "detail": "keywords encontradas: ['amatista', 'meditación', 'calma']/['amatista', 'meditación', 'cuarzo', 'calma'] | tools: 🪨 Analizando textos de la tienda: \"meditación\", 🔍 Buscando en la base de conocimiento: \"meditación minerales\", 📦 Buscando productos en el catálogo: \"\"",
+      "latency_ms": 36448.62,
+      "infra_error": false
+    },
+    {
+      "name": "direct: 'quiero ver pulseras'",
+      "passed": true,
+      "detail": "keywords encontradas: ['pulsera']/['pulsera'] | tools: solo estado inicial/neutral",
+      "latency_ms": 4956.69,
+      "infra_error": false
+    },
+    {
+      "name": "direct: 'tienes orgonitas?'",
+      "passed": true,
+      "detail": "keywords encontradas: ['orgonita']/['orgonita'] | tools: 📦 Buscando productos en el catálogo: \"\"",
+      "latency_ms": 7239.34,
+      "infra_error": false
+    },
+    {
+      "name": "kb: '¿cuánto tarda el envío?'",
+      "passed": true,
+      "detail": "keywords encontradas: ['envío', 'plazo', 'entrega', 'día']/['envío', 'plazo', 'entrega', 'día'] | tools: 🔍 Buscando en la base de conocimiento: \"tiempo de envío\"",
+      "latency_ms": 5334.11,
+      "infra_error": false
+    },
+    {
+      "name": "kb: '¿puedo devolver un producto?'",
+      "passed": true,
+      "detail": "keywords encontradas: ['devolución', 'devolver', 'plazo']/['devolución', 'devolver', 'plazo', 'cambio'] | tools: 🔍 Buscando en la base de conocimiento: \"política de devoluciones\"",
+      "latency_ms": 6851.8,
+      "infra_error": false
+    }
+  ],
+  "metrics": {
+    "conceptual": {
+      "found": 14,
+      "total": 16,
+      "pct": 87.5
+    },
+    "direct": {
+      "found": 2,
+      "total": 2,
+      "pct": 100.0
+    },
+    "kb": {
+      "found": 7,
+      "total": 8,
+      "pct": 87.5
+    }
+  }
+}

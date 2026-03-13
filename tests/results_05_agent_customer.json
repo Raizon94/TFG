@@ -1,0 +1,104 @@
+{
+  "total": 8,
+  "avg_latency_ms": 11763.51,
+  "conversations": [
+    {
+      "description": "RAG: descubrimiento de minerales para intención",
+      "tool_target": "infer_minerals_for_intent + search_catalog",
+      "id_customer": null,
+      "question": "Busco algo que me ayude con la ansiedad y el estrés",
+      "answer": "¡Claro! En UniArt asociamos la **amatista** y la **labradorita** con la reducción de la ansiedad y el estrés. Aquí tienes una selección variada de productos que pueden ayudarte a sentirte más tranquilo y equilibrado:\n\n- Pulsera de amatista auténtica  \n- Colgante de amatista laminada  \n- Esferas de amatista (varios tamaños)  \n- Pirámide de amatista tallada artesanalmente  \n- Corazón de amatista  \n- Abalorios de amatista (ideal para crear tus propias joyas)  \n- Anillo de labradorita clara  \n- Corazón de labradorita natural  \n- Colgante de labradorita en punta biterminada  \n- Esferas de labradorita (Larvikita)  \n- Péndulo de labradorita (para meditación)  \n- Cuentas de labradorita natural (para pulseras o collares)\n\nEspero que encuentres el que mejor se adapte a ti. Si necesitas más información o quieres ver algún formato en particular, ¡dímelo!",
+      "tools_invoked": [
+        "🪨 Analizando textos de la tienda: \"ansiedad y estrés\"",
+        "📦 Buscando productos en el catálogo: \"amatista\"",
+        "📦 Buscando productos en el catálogo: \"labradorita\""
+      ],
+      "products_returned": 12,
+      "latency_ms": 31786.15
+    },
+    {
+      "description": "Búsqueda directa en el catálogo",
+      "tool_target": "search_catalog",
+      "id_customer": null,
+      "question": "Quiero ver colgantes de turmalina negra",
+      "answer": "¡Perfecto! Aquí tienes una selección de colgantes de turmalina negra, con diferentes estilos y acabados para que elijas el que más te guste.  \n\n- Colgante en bruto sin metal, ideal si prefieres la piedra tal cual.  \n- Colgante Higa “Puño de la Suerte”, con diseño artesanal y energía protectora.  \n- Colgante de orgonita con turmalina negra y espiral de cobre, para equilibrar energías.  \n- Punta de turmalina negra de 3 facetas, con la forma típica del cristal.  \n- Colgante semipulido ovalado, con un acabado elegante.  \n- Colgante en plata de 1ª ley con gema facetada, combina metal y piedra.  \n- Pack de 10 colgantes o llaveros en bruto, opción económica y versátil.  \n- Pack de 10 colgantes semipulidos, variedad de formatos en un solo lote.",
+      "tools_invoked": [
+        "📦 Buscando productos en el catálogo: \"turmalina negra | colgante\""
+      ],
+      "products_returned": 8,
+      "latency_ms": 7533.4
+    },
+    {
+      "description": "Exploración de categorías del catálogo",
+      "tool_target": "browse_categories",
+      "id_customer": null,
+      "question": "¿Qué categorías de productos tenéis disponibles?",
+      "answer": "¡Claro! En UniArt tienes una gran variedad de secciones para explorar. Aquí tienes las principales categorías disponibles:\n\n- **Abalorios**  \n- **Ágata**  \n- **Amatista**  \n- **Amuletos**  \n- **Anillos** / **Anillos de plata**  \n- **Aventurina**  \n- **Bisutería**  \n- **Cadenas de plata**  \n- **Cantos rodados**  \n- **Carneola**  \n- **Chips**  \n- **Colgantes** / **Colgantes de plata**  \n- **Collares**  \n- **Corazones**  \n- **Cristal de roca**  \n- **Cuarzo** / **Cuarzo rosa**  \n- **Cuentas (Ágata, Amatista, Turmalina, sueltas)**  \n- **Embalajes y complementos**  \n- **Esferas y huevos**  \n- **Figuras y ángeles**  \n- **Formas geométricas**  \n- **Fornituras y abalorios**  \n- **Geodas y drusas**  \n- **Horóscopo**  \n- **Jade**  \n- **Japa‑Mala**  \n- **Jaspe**  \n- **Joyas de plata**  \n- **Lapislázuli**  \n- **Llaveros y relojes**  \n- **Masajeadores**  \n- **Minerales en bruto**  \n- **Obsidiana**  \n- **Ofertas y packs**  \n- **Ojo de tigre** / **Ojo turco**  \n- **Orgonitas**  \n- **Otros piedras y abalorios**  \n- **Pendientes de plata**  \n- **Péndulos**  \n- **Piedras de los chakras**  \n- **Piedras para engarzar**  \n- **Piedras semipreciosas**  \n- **Pirámides**  \n- **Productos esotéricos**  \n- **Pulseras artesanales** / **Pulseras de plata**  \n- **Puntas y obeliscos**  \n- **Símbolos Reiki**  \n- **Sodalita**  \n- **Tienda física**  \n- **Turmalina**  \n- **Unakita**  \n- **Varitas de poder**\n\nSi alguna categoría te llama la atención o buscas algo concreto dentro de ella, dime y te ayudo a encontrar los productos perfectos. 😊",
+      "tools_invoked": [
+        "📂 Explorando categorías"
+      ],
+      "products_returned": 0,
+      "latency_ms": 9451.23
+    },
+    {
+      "description": "Consulta a la base de conocimiento (envíos)",
+      "tool_target": "search_knowledge_base",
+      "id_customer": null,
+      "question": "¿Hacéis envíos a Canarias? ¿Cuánto tardan?",
+      "answer": "¡Claro! 📦  \n\nEn UniArt enviamos a Canarias (también a Ceuta, Melilla y Gibraltar). El coste del envío depende del peso y del total del pedido; el sistema lo calcula automáticamente al finalizar la compra y te lo muestra antes de pagar.\n\n**Plazos de entrega:**  \n- Una vez confirmado y verificado el pago, preparamos el pedido en **máximo 2 días hábiles**.  \n- El envío a Canarias suele tardar entre **3 y 7 días laborables**, según el transportista y la zona de destino.\n\nSi el plazo se viera afectado por alguna incidencia (falta de stock, problemas logísticos, etc.), te avisaremos lo antes posible.  \n\n¿Te gustaría que te ayude a buscar algún mineral o producto para añadir a tu carrito? 😊",
+      "tools_invoked": [
+        "🔍 Buscando en la base de conocimiento: \"¿Qué información hay sobre envíos a Canarias y plazos de entrega?\""
+      ],
+      "products_returned": 0,
+      "latency_ms": 14607.32
+    },
+    {
+      "description": "Consulta a la base de conocimiento (devoluciones)",
+      "tool_target": "search_knowledge_base",
+      "id_customer": null,
+      "question": "¿Cuál es vuestra política de devoluciones?",
+      "answer": "**Política de devoluciones de UniArt Minerales**\n\n- Si eres cliente particular y el producto no te satisface, dispones de **14 días naturales** desde la recepción para devolverlo en su estado original, sin señales de uso.  \n- El reembolso se realizará una vez recibido el artículo.  \n- Los gastos de envío de la devolución corren a cargo del cliente.  \n- Para iniciar la devolución, ponte en contacto con nosotros y sigue las instrucciones del documento de información sobre el desistimiento.  \n\n> **Importante:** Los clientes mayoristas tienen un plazo de **7 días naturales** y deben contactar con nosotros para gestionar la devolución.  \n\nSi necesitas más detalles o ayuda para iniciar el proceso, ¡avísanos! 😊",
+      "tools_invoked": [
+        "🔍 Buscando en la base de conocimiento: \"política de devoluciones\""
+      ],
+      "products_returned": 0,
+      "latency_ms": 6478.18
+    },
+    {
+      "description": "Recomendaciones personalizadas (ML)",
+      "tool_target": "get_recommendations",
+      "id_customer": 100,
+      "question": "¿Qué me recomendáis basándoos en mis compras anteriores?",
+      "answer": "¡Claro! Basándonos en tus compras anteriores, hemos seleccionado algunas piezas que podrían interesarte y que combinan con tu estilo coleccionista:\n\n- **Drusa de amatista por peso** – perfecta para crear una pieza única o ampliar tu colección de amatistas.\n- **Apofilitas y zeolitas por gramo** – ideales para experimentos y exhibiciones de minerales raros.\n- **Free form polished per gram** – formas pulidas que resaltan la belleza natural de cada piedra.\n- **Faceted tips per gram** – puntas facetadas que añaden un toque elegante a cualquier display.\n- **Cianita, por gramo** – una piedra con vibrantes tonos azules, excelente para decorar.\n- **Puntas de cuarzo natural de Brasil por gramo** – cuarzo de alta calidad, muy apreciado por coleccionistas.\n\nSi quieres ver más opciones o buscas algún formato específico (colgantes, esferas, etc.), avísame y te ayudo a encontrar lo que necesites.",
+      "tools_invoked": [
+        "✨ Generando recomendaciones"
+      ],
+      "products_returned": 0,
+      "latency_ms": 8913.24
+    },
+    {
+      "description": "Consulta de estado de pedidos del cliente",
+      "tool_target": "get_order_status",
+      "id_customer": 100,
+      "question": "¿Cuál es el estado de mis pedidos?",
+      "answer": "¡Hola! Actualmente no tienes pedidos registrados en nuestra tienda. 😊\n\n¿Hay algo más en lo que pueda ayudarte? ¿Tal vez buscas algún mineral, una joya o información sobre envíos? ¡Estoy aquí para asistirte!",
+      "tools_invoked": [
+        "📋 Consultando estado de pedido..."
+      ],
+      "products_returned": 0,
+      "latency_ms": 4164.78
+    },
+    {
+      "description": "Consulta de información del cliente",
+      "tool_target": "get_customer_info",
+      "id_customer": 100,
+      "question": "Quiero consultar mis datos de cliente registrados",
+      "answer": "¡Claro, Paulina! 😊  \nEstos son los datos que tenemos registrados:\n\n- **Nombre:** Paulina Córdoba  \n- **Email:** xiomara74@example.net  \n\nSi necesitas actualizar alguna información o tienes alguna otra consulta, avísame y con gusto te ayudo.",
+      "tools_invoked": [
+        "👤 Obteniendo info del cliente"
+      ],
+      "products_returned": 0,
+      "latency_ms": 11173.75
+    }
+  ]
+}

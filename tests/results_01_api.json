@@ -1,0 +1,80 @@
+{
+  "total": 12,
+  "passed": 12,
+  "failed": 0,
+  "avg_latency_ms": 25.0,
+  "details": [
+    {
+      "name": "GET /docs (health)",
+      "passed": true,
+      "detail": "status=200",
+      "latency_ms": 2.36
+    },
+    {
+      "name": "GET /api/products",
+      "passed": true,
+      "detail": "12 productos, campos=OK",
+      "latency_ms": 203.97
+    },
+    {
+      "name": "GET /api/recommendations/8627 (conocido)",
+      "passed": true,
+      "detail": "3 recomendaciones, IDs=[1594, 567, 1271]",
+      "latency_ms": 13.87
+    },
+    {
+      "name": "GET /api/recommendations/999999 (fallback)",
+      "passed": true,
+      "detail": "3 recs (fallback), IDs=[1530, 1536, 1533]",
+      "latency_ms": 14.26
+    },
+    {
+      "name": "GET /api/customers/top",
+      "passed": true,
+      "detail": "10 clientes, ordenados=OK",
+      "latency_ms": 18.89
+    },
+    {
+      "name": "GET /api/admin/stats",
+      "passed": true,
+      "detail": "pedidos=6040, ticket_medio=182.84",
+      "latency_ms": 14.0
+    },
+    {
+      "name": "GET /api/admin/model-status",
+      "passed": true,
+      "detail": "svd_loaded=True, size=2352.4KB, retrain_needed=True",
+      "latency_ms": 3.83
+    },
+    {
+      "name": "GET /api/admin/retrain-log",
+      "passed": true,
+      "detail": "log=No hay log de reentrenamiento aún....",
+      "latency_ms": 2.77
+    },
+    {
+      "name": "GET /api/admin/boost",
+      "passed": true,
+      "detail": "status=200, count=0",
+      "latency_ms": 4.83
+    },
+    {
+      "name": "GET /api/admin/boost/search?q=amatista",
+      "passed": true,
+      "detail": "status=200, resultados=10",
+      "latency_ms": 11.95
+    },
+    {
+      "name": "POST /api/checkout (vacío → 400)",
+      "passed": true,
+      "detail": "status=400",
+      "latency_ms": 4.6
+    },
+    {
+      "name": "POST /api/checkout (cliente inválido → 404)",
+      "passed": true,
+      "detail": "status=404",
+      "latency_ms": 4.65
+    }
+  ]
+}

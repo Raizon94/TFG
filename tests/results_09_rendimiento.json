@@ -1,0 +1,81 @@
+{
+  "/api/products": {
+    "p50": 89.8,
+    "p95": 91.8,
+    "p99": 94.2,
+    "avg": 89.9,
+    "errors": 0,
+    "n": 20
+  },
+  "/api/customers/top": {
+    "p50": 16.5,
+    "p95": 18.8,
+    "p99": 20.0,
+    "avg": 16.7,
+    "errors": 0,
+    "n": 20
+  },
+  "/api/admin/stats": {
+    "p50": 9.4,
+    "p95": 11.0,
+    "p99": 11.1,
+    "avg": 9.5,
+    "errors": 0,
+    "n": 20
+  },
+  "/api/admin/model-status": {
+    "p50": 2.3,
+    "p95": 3.3,
+    "p99": 3.7,
+    "avg": 2.4,
+    "errors": 0,
+    "n": 20
+  },
+  "/api/recommendations/100": {
+    "p50": 4.5,
+    "p95": 5.6,
+    "p99": 6.2,
+    "avg": 4.6,
+    "errors": 0,
+    "n": 20
+  },
+  "/api/recommendations/999999": {
+    "p50": 4.3,
+    "p95": 5.5,
+    "p99": 5.8,
+    "avg": 4.4,
+    "errors": 0,
+    "n": 20
+  },
+  "concurrent_5": {
+    "workers": 5,
+    "rps": 14.0,
+    "avg_ms": 344.5,
+    "errors": 0
+  },
+  "concurrent_10": {
+    "workers": 10,
+    "rps": 15.6,
+    "avg_ms": 615.5,
+    "errors": 0
+  },
+  "concurrent_20": {
+    "workers": 20,
+    "rps": 16.2,
+    "avg_ms": 958.1,
+    "errors": 0
+  },
+  "concurrent_50": {
+    "workers": 50,
+    "rps": 16.2,
+    "avg_ms": 1938.7,
+    "errors": 0
+  },
+  "ml_inference": {
+    "n": 10,
+    "p50": 6.4,
+    "p95": 8.3,
+    "avg": 6.5,
+    "max": 8.3
+  }
+}

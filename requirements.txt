@@ -1,0 +1,39 @@
+# ─── Dependencias del proyecto TFG ───────────────────────────
+# Backend
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+sqlalchemy>=2.0
+pymysql>=1.1
+cryptography>=42.0
+pydantic>=2.0
+python-multipart>=0.0.9
+
+# Frontend
+streamlit>=1.40.0
+requests>=2.31
+
+# Machine Learning
+scikit-learn>=1.5
+xgboost>=2.0
+pandas>=2.2
+numpy>=1.26
+scipy>=1.13
+joblib>=1.4
+
+# Script de anonimización
+faker>=30.0
+
+# Agente IA (LangGraph + OpenAI)
+langgraph>=0.2
+langgraph-checkpoint-sqlite>=2.0.0
+langchain-openai>=0.2
+langchain-core>=0.3
+langchain-community>=0.3
+faiss-cpu>=1.8
+
+# RAG (ChromaDB)
+chromadb>=1.0
+sentence-transformers>=3.0
+
+# Utilidades desarrollo
+python-dotenv>=1.0

@@ -1,0 +1,96 @@
+services:
+  db:
+    image: mysql:9.6
+    container_name: tfg_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root1234
+      MYSQL_DATABASE: tfg_bd
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      # Automáticamente importa el dump DB en el primer inicio (si la carpeta mysql_data está vacia)
+      - ./BD.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/zzz-tfg.cnf:ro
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
+      interval: 10s
+      timeout: 20s
+      retries: 20
+      start_period: 120s
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: tfg_phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root1234
+      UPLOAD_LIMIT: 200M
+    ports:
+      - "8080:80"
+    volumes:
+      - ./docker/phpmyadmin/servername.conf:/etc/apache2/conf-enabled/servername.conf:ro
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+      args:
+        HTTP_PROXY: ${PROXY_URL:-}
+        HTTPS_PROXY: ${PROXY_URL:-}
+    container_name: tfg_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=mysql+pymysql://root:root1234@db:3306/tfg_bd
+      - IN_DOCKER=1
+      - ENABLE_DOCKER_PROXY=0
+      - NO_PROXY=localhost,127.0.0.1,backend,db,host.docker.internal
+      # Añade las keys de OpenAI en un archivo .env si deseas usarlos en el docker container
+    env_file:
+      - .env
+    volumes:
+      - ./backend:/app/backend
+      - ./scripts:/app/scripts
+      - models_data:/app/backend/app/models
+      - rag_data:/app/rag_data
+      - product_images_data:/app/product_images
+      - ./agent_memory.sqlite:/app/agent_memory.sqlite
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+      args:
+        HTTP_PROXY: ${PROXY_URL:-}
+        HTTPS_PROXY: ${PROXY_URL:-}
+    container_name: tfg_frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - BACKEND_URL=http://backend:8000
+      - STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+      - STREAMLIT_SERVER_HEADLESS=true
+      - NO_PROXY=localhost,127.0.0.1,backend,db,host.docker.internal
+    env_file:
+      - .env
+    volumes:
+      - ./frontend:/app/frontend
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+  models_data:
+  rag_data:
+  product_images_data:

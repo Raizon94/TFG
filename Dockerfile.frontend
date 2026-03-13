@@ -1,0 +1,25 @@
+FROM python:3.13-slim
+
+WORKDIR /app
+
+ARG HTTP_PROXY
+ARG HTTPS_PROXY
+ENV HTTP_PROXY=$HTTP_PROXY
+ENV HTTPS_PROXY=$HTTPS_PROXY
+
+COPY requirements.txt .
+
+# Solo instalamos las dependencias del frontend para ahorrar espacio
+RUN pip install --no-cache-dir streamlit>=1.40.0 requests>=2.31 python-dotenv>=1.0
+
+# Copiar el codigo del frontend
+COPY frontend ./frontend
+
+# Definimos variables de entorno por defecto que apuntan al contenedor interno de docker
+ENV BACKEND_URL="http://backend:8000"
+
+EXPOSE 8501
+
+WORKDIR /app/frontend
+
+CMD ["streamlit", "run", "app.py", "--server.port", "8501", "--server.address", "0.0.0.0", "--server.headless", "true"]

@@ -1,0 +1,56 @@
+# ── Python ─────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# ── Entorno virtual ───────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ── Variables de entorno / secretos ───────────────────────────────
+.env
+.env.*
+
+# ── SQLite (memoria del agente) ───────────────────────────────────
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# ── Modelos ML (pesados, se regeneran con --train) ────────────────
+backend/app/models/*.joblib
+
+# ── RAG (ChromaDB, se regenera con build_rag) ────────────────────
+rag_data/
+
+# ── Imágenes de producto descargadas ──────────────────────────────
+product_images/
+
+# ── Resultados de evaluación ──────────────────────────────────────
+evaluation_results/
+
+# ── IDE / editores ────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ── Docker volúmenes locales ──────────────────────────────────────
+docker/mysql/data/
+
+# ── Claude Code ───────────────────────────────────────────────────
+.claude/
+
+# ── Base de datos / backups ────────────────────────────────────────
+BD.sql
+backups/
+
+# ── Misc ──────────────────────────────────────────────────────────
+*.log
+.pid_*
