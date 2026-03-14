@@ -614,7 +614,7 @@ def _run_case_admin_stream(case: dict, api_base: str, verbose: bool) -> dict[str
 
 def _print_case(r: dict) -> None:
     icon_tool = "✅" if r["tool_ok"] else "❌"
-    icon_kw   = "✅" if r["keyword_ok"] else "⚠️"
+    icon_kw   = "✅" if r["keyword_ok"] else "⚠"
     guardrail_note = " [GUARDRAIL]" if r["should_block"] else ""
     print(
         f"  [{r['id']}]{guardrail_note} {icon_tool} tool  {icon_kw} kw  "
@@ -626,7 +626,7 @@ def _print_case(r: dict) -> None:
     if tools_exp:
         print(f"       tools esperadas : {', '.join(tools_exp)}")
     if r.get("error"):
-        print(f"       ⚠️  ERROR: {r['error']}")
+        print(f"  ERROR: {r['error']}")
     full = r.get("reply_full") or r.get("reply_preview", "")
     print(f"       Respuesta completa:")
     for line in full.splitlines():
@@ -676,7 +676,7 @@ def _print_summary(results: list[dict], agent_label: str) -> dict[str, Any]:
     # Mostrar fallos
     failures = [r for r in functional if not r["tool_ok"] or not r["keyword_ok"]]
     if failures:
-        print(f"\n  ⚠️  Casos con problemas ({len(failures)}):")
+        print(f"\n  Casos con problemas ({len(failures)}):")
         for r in failures:
             issues = []
             if not r["tool_ok"]:
@@ -687,7 +687,7 @@ def _print_summary(results: list[dict], agent_label: str) -> dict[str, Any]:
             for iss in issues:
                 print(f"         → {iss}")
     else:
-        print("\n  ✅ Todos los casos funcionales aprobaron.")
+        print("\n Todos los casos funcionales aprobaron.")
 
     return {
         "agent": agent_label,
@@ -757,7 +757,7 @@ def main() -> None:
         if resp.status_code not in (200, 404):
             raise ConnectionError()
     except Exception:
-        print(f"❌  No se puede conectar al backend en {args.api_base}")
+        print(f" No se puede conectar al backend en {args.api_base}")
         print("   Asegúrate de que el backend está arrancado: ./start.sh")
         sys.exit(1)
 
@@ -838,8 +838,8 @@ def main() -> None:
     }
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(report, f, ensure_ascii=False, indent=2)
-    print(f"\n  📄 Resultados JSON : {output_path}")
-    print(f"  📋 Log completo    : {log_path}\n")
+    print(f"\n Resultados JSON : {output_path}")
+    print(f" Log completo : {log_path}\n")
     tee.close()
 
 

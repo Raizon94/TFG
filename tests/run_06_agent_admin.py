@@ -88,22 +88,22 @@ def main():
     try:
         requests.get(f"{API_BASE}/docs", timeout=5)
     except Exception:
-        print(f"\n  ❌ No se puede conectar a {API_BASE}")
+        print(f"\n No se puede conectar a {API_BASE}")
         sys.exit(1)
 
     results = []
 
     for i, conv in enumerate(CONVERSATIONS, 1):
         print(f"\n─── [{i}/{len(CONVERSATIONS)}] {conv['description']} ───")
-        print(f"  📩 Pregunta: {conv['message']}")
+        print(f" Pregunta: {conv['message']}")
 
         t0 = time.time()
         try:
             reply = query_admin(conv["message"])
             ms = (time.time() - t0) * 1000
 
-            print(f"  🤖 Respuesta: {reply[:200]}{'…' if len(reply) > 200 else ''}")
-            print(f"  ⏱️  {ms:.0f}ms")
+            print(f" Respuesta: {reply[:200]}{'…' if len(reply) > 200 else ''}")
+            print(f"  {ms:.0f}ms")
 
             results.append({
                 "description": conv["description"],
@@ -115,7 +115,7 @@ def main():
 
         except Exception as e:
             ms = (time.time() - t0) * 1000
-            print(f"  ❌ Error: {e}")
+            print(f" Error: {e}")
             results.append({
                 "description": conv["description"],
                 "tool_target": conv["tool_target"],
@@ -140,7 +140,7 @@ def main():
     out = Path(__file__).resolve().parent / "results_06_agent_admin.json"
     with open(out, "w") as f:
         json.dump(output, f, indent=2, ensure_ascii=False, default=str)
-    print(f"\n  📄 Resultados guardados: {out}")
+    print(f"\n Resultados guardados: {out}")
 
 
 if __name__ == "__main__":

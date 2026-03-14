@@ -82,13 +82,13 @@ def build_index(force: bool = False) -> None:
             col = client.get_collection(COLLECTION_NAME)
             n = col.count()
             if n > 0:
-                print(f"✅ Índice ya existe con {n} documentos. "
+                print(f"Indice ya existe con {n} documentos. "
                       f"Usa --force para reconstruir.")
                 return
         except Exception:
             pass
 
-    print("🔨 Construyendo índice de conocimiento en ChromaDB…")
+    print(" Construyendo índice de conocimiento en ChromaDB…")
     t0 = time.time()
 
     # ── Limpiar colección previa ──
@@ -113,7 +113,7 @@ def build_index(force: bool = False) -> None:
     all_meta: list[dict] = []
 
     # ── 1. DESCRIPCIONES LARGAS DE PRODUCTOS (conocimiento mineral) ──
-    print("  📦 Cargando descripciones de productos…")
+    print(" Cargando descripciones de productos…")
     products = db.execute(text("""
         SELECT pl.id_product, pl.name, pl.description
         FROM ps_product_lang pl
@@ -147,7 +147,7 @@ def build_index(force: bool = False) -> None:
           f"con descripción (de {len(products)} activos)")
 
     # ── 2. CATEGORÍAS ──────────────────────────────────────────────
-    print("  📂 Cargando categorías…")
+    print(" Cargando categorías…")
     categories = db.execute(text("""
         SELECT cl.id_category, cl.name, cl.description
         FROM ps_category_lang cl
@@ -176,7 +176,7 @@ def build_index(force: bool = False) -> None:
     print(f"    → {n_cat_chunks} chunks de {len(categories)} categorías")
 
     # ── 3. PÁGINAS CMS ────────────────────────────────────────────
-    print("  📄 Cargando páginas CMS…")
+    print(" Cargando páginas CMS…")
     cms_pages = db.execute(text("""
         SELECT cl.id_cms, cl.meta_title, cl.content
         FROM ps_cms_lang cl
@@ -208,7 +208,7 @@ def build_index(force: bool = False) -> None:
 
     # ── Insertar en ChromaDB ──────────────────────────────────────
     total = len(all_ids)
-    print(f"\n  💾 Indexando {total} documentos en ChromaDB…")
+    print(f"\n Indexando {total} documentos en ChromaDB…")
 
     BATCH = 500
     for start in range(0, total, BATCH):
@@ -221,7 +221,7 @@ def build_index(force: bool = False) -> None:
         print(f"    batch {start}–{end} insertado")
 
     elapsed = time.time() - t0
-    print(f"\n✅ Índice de conocimiento construido: {collection.count()} documentos "
+    print(f"\n Índice de conocimiento construido: {collection.count()} documentos "
           f"en {elapsed:.1f}s")
     print(f"   Descripciones producto: {n_prod_chunks} | Categorías: {n_cat_chunks} "
           f"| CMS: {n_cms_chunks}")

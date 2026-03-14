@@ -191,7 +191,7 @@ def evaluate_what(orders_train: pd.DataFrame, details_train: pd.DataFrame,
     print(f"  Clientes evaluables (tienen historial + compras futuras): {len(eval_customers):,}")
 
     if not eval_customers:
-        print("  ⚠️  No hay clientes evaluables")
+        print("  No hay clientes evaluables")
         return {}
 
     # ── Para cada cliente: fold-in → top K → comparar ──
@@ -313,7 +313,7 @@ def evaluate_popularity_baseline(
     print(f"  Clientes evaluables: {len(eval_customers):,}")
 
     if not eval_customers:
-        print("  ⚠️  No hay clientes evaluables")
+        print("  No hay clientes evaluables")
         return {}
 
     # ── Para cada cliente: recomendar populares (sin los que ya compró) ──
@@ -383,7 +383,7 @@ def generate_charts(svd_results: dict, pop_results: dict):
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
     except ImportError:
-        print("\n  ⚠️  matplotlib no disponible. Instala con: pip install matplotlib")
+        print("\n  matplotlib no disponible. Instala con: pip install matplotlib")
         return
 
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -464,7 +464,7 @@ def generate_charts(svd_results: dict, pop_results: dict):
     path = RESULTS_DIR / "comparativa_svd_vs_popularidad.png"
     plt.savefig(path, dpi=150, bbox_inches="tight")
     plt.close()
-    print(f"\n  📊 Gráfico comparativo guardado: {path}")
+    print(f"\n Gráfico comparativo guardado: {path}")
 
     # ── Gráfico 2: Tabla resumen con mejora porcentual ──
     fig, ax = plt.subplots(figsize=(12, 4))
@@ -519,7 +519,7 @@ def generate_charts(svd_results: dict, pop_results: dict):
     path = RESULTS_DIR / "tabla_comparativa.png"
     plt.savefig(path, dpi=150, bbox_inches="tight")
     plt.close()
-    print(f"  📊 Tabla comparativa guardada: {path}")
+    print(f" Tabla comparativa guardada: {path}")
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -586,7 +586,7 @@ def main(cutoff_pct: float = 0.80) -> None:
 
     # ── Resumen comparativo final ──
     print("\n" + "=" * 70)
-    print("  ✅ COMPARATIVA FINAL: SVD (ML) vs Popularidad (Baseline)")
+    print(" COMPARATIVA FINAL: SVD (ML) vs Popularidad (Baseline)")
     print("=" * 70)
 
     if svd_results and pop_results:
@@ -627,7 +627,7 @@ def main(cutoff_pct: float = 0.80) -> None:
 
         total = svd_wins + pop_wins
         print(f"\n  {'=' * 66}")
-        print(f"  📊 MARCADOR: SVD gana en {svd_wins}/{total} métricas, "
+        print(f" MARCADOR: SVD gana en {svd_wins}/{total} métricas, "
               f"Popularidad gana en {pop_wins}/{total}")
 
         # Mejora media en Hit Rate
@@ -636,13 +636,13 @@ def main(cutoff_pct: float = 0.80) -> None:
             for k in K_VALUES
         ])
         if avg_improvement > 0:
-            print(f"  🏆 SVD supera a Popularidad en Hit Rate por +{avg_improvement:.1f}pp de media")
+            print(f" SVD supera a Popularidad en Hit Rate por +{avg_improvement:.1f}pp de media")
         elif avg_improvement < 0:
-            print(f"  ⚠️  Popularidad supera a SVD en Hit Rate por {-avg_improvement:.1f}pp de media")
+            print(f"  Popularidad supera a SVD en Hit Rate por {-avg_improvement:.1f}pp de media")
         else:
-            print(f"  🟡 Ambos modelos empatan en Hit Rate")
+            print(f" Ambos modelos empatan en Hit Rate")
 
-    print(f"\n  📊 Gráficos en: {RESULTS_DIR}/")
+    print(f"\n Gráficos en: {RESULTS_DIR}/")
     print("=" * 70)
 
 

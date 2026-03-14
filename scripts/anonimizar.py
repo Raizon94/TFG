@@ -43,7 +43,7 @@ def anonimizar_customers() -> None:
 
     with engine.begin() as conn:
         total: int = conn.execute(text(f"SELECT COUNT(*) FROM {tabla}")).scalar()  # type: ignore[assignment]
-        print(f"\n🔒 Anonimizando {tabla} ({total} filas)…")
+        print(f"\nAnonimizando {tabla} ({total} filas)...")
 
         rows = conn.execute(text(f"SELECT id_customer FROM {tabla} ORDER BY id_customer"))
         ids: list[int] = [r[0] for r in rows]
@@ -86,7 +86,7 @@ def anonimizar_customers() -> None:
             if i % BATCH_SIZE == 0 or i == total:
                 _progreso(tabla, i, total)
 
-    print(f"  ✅ {tabla} completado.\n")
+    print(f"  {tabla} completado.\n")
 
 
 # ─── 2. ps_address ─────────────────────────────────────────────────
@@ -96,7 +96,7 @@ def anonimizar_addresses() -> None:
 
     with engine.begin() as conn:
         total: int = conn.execute(text(f"SELECT COUNT(*) FROM {tabla}")).scalar()  # type: ignore[assignment]
-        print(f"🔒 Anonimizando {tabla} ({total} filas)…")
+        print(f"Anonimizando {tabla} ({total} filas)…")
 
         rows = conn.execute(text(f"SELECT id_address FROM {tabla} ORDER BY id_address"))
         ids: list[int] = [r[0] for r in rows]
@@ -140,7 +140,7 @@ def anonimizar_addresses() -> None:
             if i % BATCH_SIZE == 0 or i == total:
                 _progreso(tabla, i, total)
 
-    print(f"  ✅ {tabla} completado.\n")
+    print(f"  {tabla} completado.\n")
 
 
 # ─── 3. ps_customer_message  (texto libre — hilos de contacto) ─────
@@ -150,10 +150,10 @@ def anonimizar_mensajes_cliente() -> None:
 
     with engine.begin() as conn:
         total: int = conn.execute(text(f"SELECT COUNT(*) FROM {tabla}")).scalar()  # type: ignore[assignment]
-        print(f"🔒 Anonimizando {tabla} ({total} filas)…")
+        print(f"Anonimizando {tabla} ({total} filas)…")
 
         if total == 0:
-            print("  ⏭ Sin filas, saltando.\n")
+            print("  Sin filas, saltando.\n")
             return
 
         conn.execute(
@@ -169,7 +169,7 @@ def anonimizar_mensajes_cliente() -> None:
         )
         _progreso(tabla, total, total)
 
-    print(f"  ✅ {tabla} completado.\n")
+    print(f"  {tabla} completado.\n")
 
 
 # ─── 4. ps_message  (mensajes internos de pedidos) ─────────────────
@@ -179,10 +179,10 @@ def anonimizar_mensajes_pedido() -> None:
 
     with engine.begin() as conn:
         total: int = conn.execute(text(f"SELECT COUNT(*) FROM {tabla}")).scalar()  # type: ignore[assignment]
-        print(f"🔒 Anonimizando {tabla} ({total} filas)…")
+        print(f"Anonimizando {tabla} ({total} filas)…")
 
         if total == 0:
-            print("  ⏭ Sin filas, saltando.\n")
+            print("  Sin filas, saltando.\n")
             return
 
         conn.execute(
@@ -191,7 +191,7 @@ def anonimizar_mensajes_pedido() -> None:
         )
         _progreso(tabla, total, total)
 
-    print(f"  ✅ {tabla} completado.\n")
+    print(f"  {tabla} completado.\n")
 
 
 # ─── Main ───────────────────────────────────────────────────────────
@@ -209,7 +209,7 @@ def main() -> None:
 
     elapsed = time.time() - t0
     print("=" * 60)
-    print(f"   ✅ ANONIMIZACIÓN COMPLETADA en {elapsed:.1f}s")
+    print(f"   ANONIMIZACIÓN COMPLETADA en {elapsed:.1f}s")
     print("=" * 60)
 
 

@@ -60,7 +60,7 @@ def _reload_models() -> None:
         logger.info("Modelo SVD cargado (%d usuarios, %d productos)",
                      len(ml_what["customer_ids"]), len(ml_what["product_ids"]))
     else:
-        logger.warning("⚠️  Modelo SVD no encontrado en %s. "
+        logger.warning(" Modelo SVD no encontrado en %s. "
                        "Ejecuta: python -m scripts.train_ml", what_path)
 
     if fallback_path.exists():

@@ -195,7 +195,7 @@ def main() -> None:
 
     # ─── Resumen final ──────────────────────────────────────────────
     print("\n" + "=" * 60)
-    print("  ✅ Entrenamiento completado con éxito")
+    print("  Entrenamiento completado con exito")
     print("=" * 60)
     print(f"  Artefactos generados en: {MODELS_DIR}/")
     print(f"    • svd_what.joblib      ({what_path.stat().st_size / 1024:.0f} KB)")

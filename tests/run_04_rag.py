@@ -21,11 +21,11 @@ API_BASE = "http://localhost:8000"
 THINKING_STATUS = "🧠 Pensando..."
 NEUTRAL_STATUSES = {
     THINKING_STATUS,
-    "⚙️ Procesando resultados...",
-    "✍️ Redactando respuesta...",
+    "⚙ Procesando resultados...",
+    "✍ Redactando respuesta...",
 }
 ERROR_MARKERS = (
-    "⚠️ error técnico en el agente",
+    "⚠ error técnico en el agente",
     "connection error",
     "apiconnectionerror",
     "network is unreachable",
@@ -185,7 +185,7 @@ def main():
     try:
         requests.get(f"{API_BASE}/docs", timeout=5)
     except Exception:
-        print(f"\n  ❌ No se puede conectar a {API_BASE}")
+        print(f"\n No se puede conectar a {API_BASE}")
         sys.exit(1)
 
     tr = TestResult()
@@ -255,14 +255,14 @@ def main():
                 "latency_ms": round(ms, 2),
                 "infra_error": True,
             })
-            print(f"  ❌ {qtype}: '{case['query']}' ({ms:.0f}ms)")
+            print(f" {qtype}: '{case['query']}' ({ms:.0f}ms)")
             print(f"      Error: {e}")
 
     # Resumen
     summary = tr.summary()
 
     # Métricas por tipo
-    print(f"\n  📊 Métricas RAG por tipo:")
+    print(f"\n Métricas RAG por tipo:")
     for qtype, m in metrics.items():
         pct = m["found_kw"] / m["total_kw"] * 100 if m["total_kw"] else 0
         print(f"     {qtype:>12}: {m['found_kw']}/{m['total_kw']} keywords ({pct:.0f}%)")
@@ -276,12 +276,12 @@ def main():
     out = Path(__file__).resolve().parent / "results_04_rag.json"
     with open(out, "w") as f:
         json.dump(summary, f, indent=2, ensure_ascii=False, default=str)
-    print(f"\n  📄 Resultados guardados: {out}")
+    print(f"\n Resultados guardados: {out}")
 
     total = summary["total"]
     passed = summary["passed"]
     if infra_failures == total:
-        print("\n  ❌ Fallo global de infraestructura/LLM: el agente no pudo ejecutar el flujo RAG.")
+        print("\n Fallo global de infraestructura/LLM: el agente no pudo ejecutar el flujo RAG.")
         sys.exit(2)
     if passed < total:
         sys.exit(1)

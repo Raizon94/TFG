@@ -49,7 +49,7 @@ def percentile(data, p):
 def main():
     print("="*60+"\n  TEST 09: Rendimiento y Latencia\n"+"="*60)
     try: requests.get(f"{API_BASE}/docs", timeout=5)
-    except: print(f"  ❌ No se puede conectar a {API_BASE}"); sys.exit(1)
+    except: print(f" No se puede conectar a {API_BASE}"); sys.exit(1)
 
     N_REQUESTS = 20
     results = {}
@@ -133,13 +133,13 @@ def main():
     print(f"{'='*60}")
     for path, data in results.items():
         if isinstance(data, dict) and "p50" in data:
-            status = "✅" if data["p50"] < 500 else "⚠️"
+            status = "✅" if data["p50"] < 500 else "⚠"
             print(f"  {status} {path}: p50={data['p50']}ms, p95={data['p95']}ms")
 
     out = Path(__file__).resolve().parent / "results_09_rendimiento.json"
     with open(out, "w") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)
-    print(f"\n  📄 Resultados: {out}")
+    print(f"\n Resultados: {out}")
 
 if __name__ == "__main__":
     main()

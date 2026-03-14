@@ -402,7 +402,7 @@ def main():
     out = Path(__file__).resolve().parent / "results_02_ml.json"
     with open(out, "w") as f:
         json.dump(summary, f, indent=2, ensure_ascii=False, default=str)
-    print(f"\n  📄 Resultados guardados: {out}")
+    print(f"\n Resultados guardados: {out}")
 
 
 if __name__ == "__main__":

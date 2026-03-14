@@ -249,7 +249,7 @@ def main():
     try:
         requests.get(f"{API_BASE}/docs", timeout=5)
     except Exception:
-        print(f"\n  ❌ ERROR: No se puede conectar a {API_BASE}")
+        print(f"\n ERROR: No se puede conectar a {API_BASE}")
         print("  Asegúrate de que el backend está corriendo:")
         print("    uvicorn backend.app.main:app --port 8000")
         sys.exit(1)
@@ -290,7 +290,7 @@ def main():
     out = Path(__file__).resolve().parent / "results_01_api.json"
     with open(out, "w") as f:
         json.dump(summary, f, indent=2, ensure_ascii=False)
-    print(f"\n  📄 Resultados guardados: {out}")
+    print(f"\n Resultados guardados: {out}")
 
 
 if __name__ == "__main__":

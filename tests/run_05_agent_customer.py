@@ -19,8 +19,8 @@ import requests
 API_BASE = "http://localhost:8000"
 NEUTRAL_STATUSES = {
     "🧠 Pensando...",
-    "⚙️ Procesando resultados...",
-    "✍️ Redactando respuesta...",
+    "⚙ Procesando resultados...",
+    "✍ Redactando respuesta...",
 }
 
 # ─── Conversaciones ──────────────────────────────────────────────
@@ -127,14 +127,14 @@ def main():
     try:
         requests.get(f"{API_BASE}/docs", timeout=5)
     except Exception:
-        print(f"\n  ❌ No se puede conectar a {API_BASE}")
+        print(f"\n No se puede conectar a {API_BASE}")
         sys.exit(1)
 
     results = []
 
     for i, conv in enumerate(CONVERSATIONS, 1):
         print(f"\n─── [{i}/{len(CONVERSATIONS)}] {conv['description']} ───")
-        print(f"  📩 Pregunta: {conv['message']}")
+        print(f" Pregunta: {conv['message']}")
 
         t0 = time.time()
         try:
@@ -144,12 +144,12 @@ def main():
             ms = (time.time() - t0) * 1000
             tools = _filter_meaningful_statuses(statuses)
 
-            print(f"  🤖 Respuesta: {reply[:200]}{'…' if len(reply) > 200 else ''}")
+            print(f" Respuesta: {reply[:200]}{'…' if len(reply) > 200 else ''}")
             if tools:
-                print(f"  🔧 Tools: {', '.join(tools)}")
+                print(f" Tools: {', '.join(tools)}")
             if products:
-                print(f"  📦 Productos devueltos: {len(products)}")
-            print(f"  ⏱️  {ms:.0f}ms")
+                print(f" Productos devueltos: {len(products)}")
+            print(f"  {ms:.0f}ms")
 
             results.append({
                 "description": conv["description"],
@@ -164,7 +164,7 @@ def main():
 
         except Exception as e:
             ms = (time.time() - t0) * 1000
-            print(f"  ❌ Error: {e}")
+            print(f" Error: {e}")
             results.append({
                 "description": conv["description"],
                 "tool_target": conv["tool_target"],
@@ -192,7 +192,7 @@ def main():
     out = Path(__file__).resolve().parent / "results_05_agent_customer.json"
     with open(out, "w") as f:
         json.dump(output, f, indent=2, ensure_ascii=False, default=str)
-    print(f"\n  📄 Resultados guardados: {out}")
+    print(f"\n Resultados guardados: {out}")
 
 
 if __name__ == "__main__":

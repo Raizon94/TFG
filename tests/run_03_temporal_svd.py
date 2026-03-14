@@ -458,7 +458,7 @@ def main():
     # RESUMEN EJECUTIVO MULTI-CUTOFF
     # ═══════════════════════════════════════════════════════════════
     print(f"\n\n{'=' * 70}")
-    print("  📊 RESUMEN EJECUTIVO: Top-5 Popularidad vs Top-5 SVD")
+    print(" RESUMEN EJECUTIVO: Top-5 Popularidad vs Top-5 SVD")
     print(f"{'=' * 70}")
 
     print("\n  Mejor configuración por cutoff")
@@ -524,14 +524,14 @@ def main():
             elif p > s:
                 pop_wins += 1
 
-    print(f"\n  🏆 MARCADOR GLOBAL: SVD gana {svd_wins}/{total_comparisons}, "
+    print(f"\n MARCADOR GLOBAL: SVD gana {svd_wins}/{total_comparisons}, "
           f"Popularidad {pop_wins}/{total_comparisons}")
 
     # Guardar resultados
     out = Path(__file__).resolve().parent / "results_03_temporal_svd.json"
     with open(out, "w") as f:
         json.dump(all_results, f, indent=2, ensure_ascii=False, default=str)
-    print(f"\n  📄 Resultados guardados: {out}")
+    print(f"\n Resultados guardados: {out}")
     print(f"{'=' * 70}")
 
 

@@ -292,7 +292,7 @@ def evaluate_kb_search(case: dict, verbose: bool = False) -> dict:
 
 def run_evaluation(verbose: bool = False) -> dict:
     print("\n" + "=" * 60)
-    print("  🔬 Evaluación RAG — UniArt Minerales")
+    print(" Evaluación RAG — UniArt Minerales")
     print(f"  Fecha: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"  Dataset: {len(GOLDEN_DATASET)} casos")
     print("=" * 60)
@@ -318,7 +318,7 @@ def run_evaluation(verbose: bool = False) -> dict:
         # 2. Catalog search
         chr_result = evaluate_catalog_search(case, verbose=verbose)
         case_result["catalog_search"] = chr_result
-        print(f"   CHR={'✅' if chr_result['hit'] else '❌'}  "
+        print(f" CHR={'' if chr_result['hit'] else ''} "
               f"n_products={chr_result['num_products']}  "
               f"precision={chr_result['context_precision']:.0%}  "
               f"latency={chr_result['latency_ms']:.0f}ms")
@@ -327,7 +327,7 @@ def run_evaluation(verbose: bool = False) -> dict:
         kb = evaluate_kb_search(case, verbose=verbose)
         if not kb.get("skipped"):
             case_result["kb_search"] = kb
-            print(f"   KB={'✅' if kb['found_content'] else '❌'}  "
+            print(f" KB={'' if kb['found_content'] else ''} "
                   f"kw_precision={kb['kw_precision']:.0%}  "
                   f"latency={kb['latency_ms']:.0f}ms")
 
@@ -335,7 +335,7 @@ def run_evaluation(verbose: bool = False) -> dict:
 
     # ── Resumen ───────────────────────────────────────────────────
     print("\n" + "=" * 60)
-    print("  📊 RESUMEN")
+    print(" RESUMEN")
     print("=" * 60)
 
     # Catalog Hit Rate global
@@ -399,5 +399,5 @@ if __name__ == "__main__":
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(summary, f, ensure_ascii=False, indent=2)
 
-    print(f"\n  ✅ Resultados guardados en: {out_path}")
+    print(f"\n Resultados guardados en: {out_path}")
     print()
